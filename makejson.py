@@ -38,9 +38,13 @@ for i in range(1,11):
 		#      6          COUNTY NO                  03         26    28
 
 		#      7          COUNTY NAME                25         29    53
-        m = re.match(r"(?P<zip>.{5}).{18}(?P<state>..)(?P<fips>...)", l)
+        m = re.match(r"(?P<zip>.{5}).{18}(?P<state>..)(?P<fips>...)(?P<county>.{25})", l)
         if m:
             r = m.groupdict()
-            zipmap[r['zip']] = statecodes[r['state']] + r['fips']
+            zipmap[r['zip']] = {
+            	'fips': statecodes[r['state']] + r['fips'],
+            	'county': r['county'].strip().capitalize(),
+            	'state': r['state']
+            }
 
 print(json.dumps(zipmap))

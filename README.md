@@ -16,7 +16,8 @@ The fetch_source script downloads the zip files and makes the one
 originally was missing GA as the state abbreviation.
 
 makejson.py constructs the json dictionary from zip code to county
-code from the zipcty files. The output is in zip2fips.json.
+code, __county name and state name (that's what differs from bgruber/zip2fips)__
+from the zipcty files. The output is in zip2fips.json.
 
 The state_fips.json file was made by hand, where "by hand" means I
 copy-and-pasted [this
