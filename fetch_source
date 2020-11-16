@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# https://wonder.cdc.gov/wonder/sci_data/codes/fips/type_txt/cntyxref.asp
 curl --create-dirs "https://wonder.cdc.gov/wonder/sci_data/datasets/zipctyA.zip" -o "zipctys/zipctyA.zip" "https://wonder.cdc.gov/wonder/sci_data/datasets/zipctyB.zip" -o "zipctys/zipctyB.zip"
 
 unzip "zipctys/zipctyA.zip" -d zipctys
